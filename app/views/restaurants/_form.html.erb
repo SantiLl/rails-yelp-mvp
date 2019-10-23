@@ -1,0 +1,12 @@
+<%= simple_form_for(@restaurant) do |f| %>
+<%= f.input :name, placeholder: "Pepito's restaurant"%>
+
+<%= f.input :address, placeholder: '123 Pepito St.' %>
+
+<%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], selected: "chinese" %>
+
+<%= f.input :phone_number, placeholder: '+54 9 1148593068' %>
+
+<%= f.submit %>
+
+<% end %>

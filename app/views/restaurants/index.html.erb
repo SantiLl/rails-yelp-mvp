@@ -1,0 +1,17 @@
+
+<div class="container d-flex flex-column">
+  <h1>Welcome to the best restaurants page!</h1>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+    <li class="list-unstyled">
+      <%= restaurant.name %> | <%= link_to "Pagina", restaurant_path(restaurant) %> |
+      <%= link_to content_tag(:i, "", class: ["fas fa-trash"]), restaurant_path(restaurant),
+      method: :delete,
+      data: { confirm: "Are you sure you want to delete?" } %>
+
+    </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Add a new restaurant", new_restaurant_path %>
+</div>

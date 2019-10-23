@@ -1,0 +1,18 @@
+<div class="container d-flex flex-column">
+  <h1><%= @restaurant.name %></h1>
+  <p>Address:<%= @restaurant.address %> | Category: <%= @restaurant.category %> | Phone: <%= @restaurant.phone_number %></p>
+
+
+  <h2>Reviews:</h2>
+  <% @restaurant.reviews.each do |review| %>
+  <ul>
+    <li> Message: <%= review.content %> | Rating: <%= review.rating %> </li>
+  </ul>
+  <% end %>
+
+  <%= link_to "Add a new review", new_restaurant_review_path(@restaurant) %>
+  <br>
+  <%= link_to "Edit restaurant info", edit_restaurant_path(@restaurant) %>
+  <br>
+  <%= link_to "Return to restaurants list", restaurants_path %>
+</div>
